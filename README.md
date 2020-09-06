@@ -1,5 +1,5 @@
 # ObjectUnion
-Create one arry of unique object from multiple arrays of objects, based on specific keys
+Create one arry of unique objects from multiple arrays of objects, based on specific keys
 
 ```js
 const ObjectUnionMultiKey = (keys, ...arrays) => {
