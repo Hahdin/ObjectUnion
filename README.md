@@ -44,8 +44,7 @@ console.table(ObjectUnionOnMultiKey(
 # Object Union with grouped fields
 
 ```js
-const ObjectUnionOnMultiKeysGroup = (keys, groups, arrayGroup) => {
-  const arrays = [...arrayGroup];
+const ObjectUnionOnMultiKeysGroup = (keys, groups, [...arrays]) => {
   return arrays.reduce((acc, array) => 
     acc.concat(array.filter(item => 
       !acc.filter(ac => {
