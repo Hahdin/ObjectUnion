@@ -2,8 +2,9 @@
 Create one array of unique objects from multiple arrays of objects, based on specific keys
 
 ```js
-const ObjectUnionMultiKey = (keys, ...arrays) => 
-  arrays.reduce((acc, array) => 
+const ObjectUnionOnMultiKey = (keys, arrayGroup) => {
+  const arrays = [...groupArray];
+  return arrays.reduce((acc, array) => 
     acc.concat(array.filter(item => 
       !acc.filter(ac => 
         eval(keys.map((key, i) =>
@@ -12,13 +13,13 @@ const ObjectUnionMultiKey = (keys, ...arrays) =>
         )
       ).length)
     )
-  );
+  )};
 
-console.table(ObjectUnionMultiKey(
+console.table(ObjectUnionOnMultiKey(
     ['name', 'age'],
-    [{name: 'Jill', age: 10}, {name: 'Bob', age: 11}],
+    [[{name: 'Jill', age: 10}, {name: 'Bob', age: 11}],
     [{name: 'Jill', age: 10}, {name: 'Tony', age: 12}],
-    [{name: 'Bob', age: 12}, {name: 'Tony', age: 12}]
+    [{name: 'Bob', age: 12}, {name: 'Tony', age: 12}]]
   )
 );
 /*
