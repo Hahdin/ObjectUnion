@@ -44,7 +44,7 @@ console.table(ObjectUnionOnMultiKey(
 # Object Union with grouped fields
 
 ```js
-const ObjectUnionOnMultiKeysGroup = (keys, groups, [...arrays]) => {
+const ObjectUnionOnMultiKeysThenGroupBy = (keys, groups, [...arrays]) => {
   return arrays.reduce((acc, array) => 
     acc.concat(array.filter(item => 
       !acc.filter(ac => {
@@ -68,7 +68,7 @@ const ObjectUnionOnMultiKeysGroup = (keys, groups, [...arrays]) => {
   
   
   const ar = ObjectKeyConcat(
-    ObjectUnionOnMultiKeysGroup(
+    ObjectUnionOnMultiKeysThenGroupBy(
       ['name', 'age'],
       ['day', 'hour'],
       [[{name: 'Jill', age: 10, day: 'Mon', hour: '1'}, {name: 'Bob', age: 11, day: 'Mon', hour: '1'}],
@@ -80,7 +80,6 @@ const ObjectUnionOnMultiKeysGroup = (keys, groups, [...arrays]) => {
     ),
     ['name','age', 'day']
   );
-
 
 console.table(ar);
 
@@ -97,5 +96,6 @@ console.table(ar);
 │    6    │ 'George' │ 12  │        'Sat'         │     '3'      │       'NAME: George, AGE: 12, DAY: Sat'        │
 └─────────┴──────────┴─────┴──────────────────────┴──────────────┴────────────────────────────────────────────────┘
 */
+
 
 ```
