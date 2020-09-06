@@ -4,7 +4,7 @@ Create one array of unique objects from multiple arrays of objects, based on spe
 ```js
 const ObjectUnionMultiKey = (keys, ...arrays) => 
   arrays.reduce((acc, array) => 
-    acc.concat(array.filter((item) => 
+    acc.concat(array.filter(item => 
       !acc.filter(ac => 
         eval(keys.map((key, i) =>
             i > 0 ? `&& ac['${key}'] === item['${key}']` : `ac['${key}'] === item['${key}']`
