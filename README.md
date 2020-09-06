@@ -7,7 +7,8 @@ const ObjectUnionMultiKey = (keys, ...arrays) => {
     acc.concat(array.filter((item) => 
       !acc.filter(ac => 
         eval(keys.map(
-            (key, i) => i > 0 ? `&& ac['${key}'] === item['${key}']` : `ac['${key}'] === item['${key}']`
+            (key, i) =>
+              i > 0 ? `&& ac['${key}'] === item['${key}']` : `ac['${key}'] === item['${key}']`
           ).toString().replace(',', ' ')
         )
       ).length)
