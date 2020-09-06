@@ -68,16 +68,20 @@ const ObjectUnionOnMultiKeysGroup = (keys, groups, arrayGroup) => {
   });
   
   
-  const ar = ObjectKeyConcat(ObjectUnionOnMultiKeysGroup(
-    ['name', 'age'],
-    ['day', 'hour'],
-    [[{name: 'Jill', age: 10, day: 'Mon', hour: '1'}, {name: 'Bob', age: 11, day: 'Mon', hour: '1'}],
-    [{name: 'Jill', age: 10, day: 'Tue', hour: '2'}, {name: 'Tony', age: 12, day: 'Tue', hour: '2'}],
-    [{name: 'Jill', age: 10, day: 'Wed', hour: '3'}, {name: 'Fred', age: 12, day: 'Wed', hour: '3'}],
-    [{name: 'Jane', age: 10, day: 'Thur', hour: '1'}, {name: 'Tony', age: 12, day: 'Thur', hour: '1'}],
-    [{name: 'Jill', age: 10, day: 'Fri', hour: '2'}, {name: 'Tony', age: 12, day: 'Fri', hour: '2'}],
-    [{name: 'Bob', age: 12, day: 'Sat', hour: '3'}, {name: 'George', age: 12, day: 'Sat', hour: '3'}]]
-  ), ['name','age', 'day']);
+  const ar = ObjectKeyConcat(
+    ObjectUnionOnMultiKeysGroup(
+      ['name', 'age'],
+      ['day', 'hour'],
+      [[{name: 'Jill', age: 10, day: 'Mon', hour: '1'}, {name: 'Bob', age: 11, day: 'Mon', hour: '1'}],
+      [{name: 'Jill', age: 10, day: 'Tue', hour: '2'}, {name: 'Tony', age: 12, day: 'Tue', hour: '2'}],
+      [{name: 'Jill', age: 10, day: 'Wed', hour: '3'}, {name: 'Fred', age: 12, day: 'Wed', hour: '3'}],
+      [{name: 'Jane', age: 10, day: 'Thur', hour: '1'}, {name: 'Tony', age: 12, day: 'Thur', hour: '1'}],
+      [{name: 'Jill', age: 10, day: 'Fri', hour: '2'}, {name: 'Tony', age: 12, day: 'Fri', hour: '2'}],
+      [{name: 'Bob', age: 12, day: 'Sat', hour: '3'}, {name: 'George', age: 12, day: 'Sat', hour: '3'}]]
+    ),
+    ['name','age', 'day']
+  );
+
 
 console.table(ar);
 
