@@ -1,5 +1,5 @@
 # ObjectUnion
-function to create a union of unique object from multiple arrays of objects, based on specific keys
+function to create a union of unique objects from multiple arrays of objects, based on specific keys
 
 ```js
 const ObjectUnionMultiKey = (keys, ...arrays) => {
